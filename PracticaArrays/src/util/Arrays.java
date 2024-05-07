@@ -91,5 +91,30 @@ public abstract class Arrays {
 		}
 	}
 	
+	/**
+     * Da la nota maxima en un Array de numeros enteros entre el 0 y el 10.
+     *
+     * @param notas 						El Array de notas.
+     * @return 								La nota maxima.
+     * @throws IllegalArgumentException 	Si alguna nota no esta entre el 0 y el 10.
+     */
+	public static int maximaNota (int [] notas) {
+		for (int nota : notas) {
+			if (nota < 0 || nota > 10) {
+				throw new IllegalArgumentException("Las notas deben estar entre el 0 y el 10.");
+			}
+		}
+		
+		int max = Integer.MIN_VALUE;
+		for (int nota : notas) {
+			if (nota > max) {
+				max = nota;
+				
+			}
+		}
+		return max;
+		
+	}
+	
 	
 }
