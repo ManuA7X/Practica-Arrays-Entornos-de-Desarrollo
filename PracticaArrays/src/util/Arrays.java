@@ -116,5 +116,28 @@ public abstract class Arrays {
 		
 	}
 	
-	
+	/**
+     * Da la nota minima en un Array de numeros enteros entre el 0 y el 10.
+     *
+     * @param notas 						El Array de notas.
+     * @return 								La nota minima.
+     * @throws IllegalArgumentException 	Si alguna nota no esta entre el 0 y el 10.
+     */
+	public static int minimaNota(int [] notas) {
+		for (int nota : notas) {
+			if(nota < 0 || nota > 10) {
+				throw new IllegalArgumentException("Las notas deben estar entre el 0 y el 10.");
+			}
+		}
+		
+		int min = Integer.MAX_VALUE;
+		for(int nota : notas) {
+			if (nota < min) {
+				min = nota;
+				
+			}
+		}
+		return min;
+		
+	}
 }
